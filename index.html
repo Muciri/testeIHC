@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Games</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body style="background-color: #2D2D2D;">
+    <header class="bg-black">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+            <div class="flex-1 md:flex md:items-center md:gap-12">
+            <h1 class="text-white">PIXEL CLOUD</h1>
+            </div>
+
+            <div class="md:flex md:items-center md:gap-12">
+            <nav aria-label="Global" class="hidden md:block">
+                
+                <ul class="flex items-center gap-6 text-sm">
+                <li>
+                    <a class="text-white transition hover:text-gray-500/75" href="#games"> Jogos </a>
+                    <!-- <Link href="/">
+                        <p class="text-white transition hover:text-gray-500/75">Home</p>
+                    </Link> -->
+                </li>
+                <li>
+                     <a class="text-white transition hover:text-gray-500/75" href="#noticias"> Notícias </a> 
+                    <!-- <Link href="/login">
+                        <p class="text-white transition hover:text-gray-500/75">Login</p>
+                    </Link> -->
+                </li>
+                <li>
+                     <a class="text-white transition hover:text-gray-500/75" href="#noticias"> Notícias </a> 
+                    <!-- <Link href="/perfil">
+                        <p class="text-white transition hover:text-gray-500/75">Perfil</p>
+                    </Link> -->
+                </li>
+                </ul>
+            </nav>
+
+            <div class="flex items-center gap-4" id="header_link">
+                <div class="sm:flex sm:gap-4">
+                <!--  elemento dinâmico para botão de login/página de usuário  -->
+                <!--  {user}  -->
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+
+    <main style="display: flex; justify-content: center; padding-top: 2rem; padding-bottom: 2rem;">
+        <div class="flex flex-col md:flex-row gap-8 bg-gray-900 p-8 rounded-2xl shadow-lg w-full max-w-5xl">
+            
+            <!-- Login Form -->
+            <div class="flex-1">
+                <h2 class="text-2xl font-bold text-white mb-6">Login</h2>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-gray-300">Email</label>
+                        <input type="email" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="seu@email.com">
+                    </div>
+                    <div>
+                        <label class="block text-gray-300">Senha</label>
+                        <input type="password" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="********">
+                    </div>
+                    <button class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">
+                        Entrar
+                    </button>
+                </form>
+            </div>
+
+            <!-- Divider (opcional) -->
+            <div class="w-px bg-gray-700 hidden md:block"></div>
+
+            <!-- Register Form -->
+            <div class="flex-1">
+                <h2 class="text-2xl font-bold text-white mb-6">Cadastro</h2>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-gray-300">Nome</label>
+                        <input type="text" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Seu nome">
+                    </div>
+                    <div>
+                        <label class="block text-gray-300">Email</label>
+                        <input type="email" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="seu@email.com">
+                    </div>
+                    <div>
+                        <label class="block text-gray-300">Senha</label>
+                        <input type="password" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="********">
+                    </div>
+                    <div>
+                        <label class="block text-gray-300">Confirmar Senha</label>
+                        <input type="password" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="********">
+                    </div>
+                    <button class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition">
+                        Cadastrar
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-black">
+        <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="flex justify-center text-teal-600">
+            <h1 class="text-white">PIXEL CLOUD</h1>
+        </div>
+
+        <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
+            Este site cataloga e publica opiniões próprias a respeito de videogames.
+        </p>
+
+        <ul class="mt-12 flex justify-center gap-6 md:gap-8">
+            <!--  Ícones de redes sociais  -->
+        </ul>
+        </div>
+    </footer>
+</body>
+</html>
