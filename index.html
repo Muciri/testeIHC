@@ -54,57 +54,185 @@
 
     <!-- MAIN -->
 
-    <main style="display: flex; justify-content: center; padding-top: 2rem; padding-bottom: 2rem;">
-        <div class="flex flex-col md:flex-row gap-8 bg-gray-900 p-8 rounded-2xl shadow-lg w-full max-w-5xl">
-            
-            <!-- Login Form -->
-            <div class="flex-1">
-                <h2 class="text-2xl font-bold text-white mb-6">Login</h2>
-                <form class="space-y-4">
-                    <div>
-                        <label class="block text-gray-300">Email</label>
-                        <input type="email" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="seu@email.com">
-                    </div>
-                    <div>
-                        <label class="block text-gray-300">Senha</label>
-                        <input type="password" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="********">
-                    </div>
-                    <button class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">
-                        Entrar
-                    </button>
-                </form>
+    <main> 
+        <section style="display: flex; justify-content: center; margin-top: 2rem; margin-bottom: 2rem;">
+            <div class="flex flex-col md:flex-row gap-8 bg-gray-900 p-8 rounded-2xl shadow-lg w-full max-w-5xl">
+                
+                <!-- Login Form -->
+                <div class="flex-1">
+                    <h2 class="text-2xl font-bold text-white mb-6">Login</h2>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-gray-300">Email</label>
+                            <input type="email" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="seu@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-gray-300">Senha</label>
+                            <input type="password" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="********">
+                        </div>
+                        <button class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">
+                            Entrar
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Divider (opcional) -->
+                <div class="w-px bg-gray-700 hidden md:block"></div>
+
+                <!-- Register Form -->
+                <div class="flex-1">
+                    <h2 class="text-2xl font-bold text-white mb-6">Cadastro</h2>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-gray-300">Nome</label>
+                            <input type="text" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Seu nome">
+                        </div>
+                        <div>
+                            <label class="block text-gray-300">Email</label>
+                            <input type="email" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="seu@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-gray-300">Senha</label>
+                            <input type="password" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="********">
+                        </div>
+                        <div>
+                            <label class="block text-gray-300">Confirmar Senha</label>
+                            <input type="password" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="********">
+                        </div>
+                        <button class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition">
+                            Cadastrar
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        
+        </section>
+
+        <div class="bg-gray-900 p-8 rounded-2xl shadow-lg w-full max-w-3xl space-y-6 text-center" style="margin: 0 auto; margin-bottom: 2rem;"> <!-- margin 0 auto e bottom 2rem pra fazer a centralização e distanciação -->
+            <!-- Nome do Jogo -->
+            <label for="gameName">
+                <span class="text-sm font-medium text-gray-300"> Nome do Jogo </span>
+
+                <input
+                type="text"
+                id="gameName"
+                placeholder="Ex: The Witcher 3"
+                class="mt-0.5 w-full rounded border border-gray-500 shadow-sm sm:text-sm bg-gray-900 text-white focus:ring-indigo-500 focus:border-indigo-500"
+                />
+            </label>
+
+            <br> <br>
+
+            <!-- Plataformas -->
+            <fieldset>
+                <legend class="text-sm font-medium text-gray-300 mb-2"> Disponível para </legend>
+
+                <div class="flex flex-col sm:flex-row sm:gap-6 gap-3" style="justify-content: space-around;"> <!-- Justify content:center pra centralizar os elementos do jeito certo-->
+                <label for="xbox" class="inline-flex items-center gap-3">
+                    <input
+                    type="checkbox"
+                    id="xbox"
+                    class="size-5 rounded border border-gray-500 shadow-sm bg-gray-900 ring-offset-gray-900 checked:bg-blue-600"
+                    />
+                    <span class="font-medium text-gray-300"> Xbox </span>
+                </label>
+
+                <label for="playstation" class="inline-flex items-center gap-3">
+                    <input
+                    type="checkbox"
+                    id="playstation"
+                    class="size-5 rounded border border-gray-500 shadow-sm bg-gray-900 ring-offset-gray-900 checked:bg-blue-600"
+                    />
+                    <span class="font-medium text-gray-300"> Playstation </span>
+                </label>
+
+                <label for="pc" class="inline-flex items-center gap-3">
+                    <input
+                    type="checkbox"
+                    id="pc"
+                    class="size-5 rounded border border-gray-500 shadow-sm bg-gray-900 ring-offset-gray-900 checked:bg-blue-600"
+                    />
+                    <span class="font-medium text-gray-300"> PC </span>
+                </label>
+
+                <label for="Android" class="inline-flex items-center gap-3">
+                    <input
+                    type="checkbox"
+                    id="pc"
+                    class="size-5 rounded border border-gray-500 shadow-sm bg-gray-900 ring-offset-gray-900 checked:bg-blue-600"
+                    />
+                    <span class="font-medium text-gray-300"> Android </span>
+                </label>
+
+                </div>
+            </fieldset>
+
+            <!-- Quantidade de Estrelas -->
+            <label for="stars">
+                <span class="text-sm font-medium text-gray-300"> Quantidade de Estrelas </span>
+
+                <input
+                type="number"
+                id="stars"
+                min="1"
+                max="5"
+                placeholder="De 1 a 5"
+                class="mt-0.5 w-full rounded border border-gray-500 shadow-sm sm:text-sm bg-gray-900 text-white focus:ring-indigo-500 focus:border-indigo-500"
+                />
+            </label>
+
+            <br> <br>
+
+            <!-- Upload da Imagem do Jogo -->
+            <label for="gameImage">
+                <span class="text-sm font-medium text-gray-300"> Imagem do Jogo (URL ou arquivo) </span>
+
+                <input
+                type="file"
+                id="gameImage"
+                accept="image/*"
+                class="mt-0.5 w-full rounded border border-gray-500 shadow-sm file:bg-indigo-600 file:text-white file:rounded file:px-4 file:py-1 file:border-0 file:mr-4 sm:text-sm bg-gray-900 text-white focus:ring-indigo-500 focus:border-indigo-500"
+                />
+            </label>
+
+            <br> <br>
+
+            <!-- Texto da Review -->
+            <label for="review">
+                <span class="text-sm font-medium text-gray-300"> Sua Review </span>
+
+                <textarea
+                id="review"
+                rows="8"
+                placeholder="Escreva aqui sua review do jogo"
+                class="mt-0.5 w-full resize-none rounded border border-gray-500 shadow-sm sm:text-sm bg-gray-900 text-white focus:ring-indigo-500 focus:border-indigo-500"
+                ></textarea>
+            </label>
+
+            <!-- Toggle de Aceitação dos Termos -->
+            <div class="flex items-center gap-3">
+                <label
+                for="accept"
+                class="relative block h-8 w-14 rounded-full bg-gray-500 transition-colors [-webkit-tap-highlight-color:_transparent] has-checked:bg-green-500"
+                >
+                <input type="checkbox" id="accept" class="peer sr-only" />
+                <span
+                    class="absolute inset-y-0 start-0 m-1 size-6 rounded-full bg-white transition-[inset-inline-start] peer-checked:start-6 dark:bg-gray-900"
+                ></span>
+                </label>
+                <span class="text-sm text-gray-300">Aceito os termos de uso da plataforma</span>
             </div>
 
-            <!-- Divider (opcional) -->
-            <div class="w-px bg-gray-700 hidden md:block"></div>
-
-            <!-- Register Form -->
-            <div class="flex-1">
-                <h2 class="text-2xl font-bold text-white mb-6">Cadastro</h2>
-                <form class="space-y-4">
-                    <div>
-                        <label class="block text-gray-300">Nome</label>
-                        <input type="text" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Seu nome">
-                    </div>
-                    <div>
-                        <label class="block text-gray-300">Email</label>
-                        <input type="email" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="seu@email.com">
-                    </div>
-                    <div>
-                        <label class="block text-gray-300">Senha</label>
-                        <input type="password" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="********">
-                    </div>
-                    <div>
-                        <label class="block text-gray-300">Confirmar Senha</label>
-                        <input type="password" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="********">
-                    </div>
-                    <button class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition">
-                        Cadastrar
-                    </button>
-                </form>
-            </div>
-
+            <!-- Botão de Enviar -->
+            <button
+                class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition"
+                type="submit"
+            >
+                Enviar Review
+            </button>
         </div>
+
     </main>
 
     <footer class="bg-black">
