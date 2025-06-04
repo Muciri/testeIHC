@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,64 +12,106 @@
 <body style="background-color: #2D2D2D;">
     <header class="bg-black">
         <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <div class="flex h-16 items-center justify-between">
-            <div class="flex-1 md:flex md:items-center md:gap-12">
-            <h1 class="text-white">PIXEL CLOUD</h1>
-            </div>
-
-            <div class="md:flex md:items-center md:gap-12">
-            <nav aria-label="Global" class="hidden md:block">
-                
-                <ul class="flex items-center gap-6 text-sm">
-                <li>
-                    <a class="text-white transition hover:text-gray-500/75" href="#games"> Jogos </a>
-                    <!-- <Link href="/">
-                        <p class="text-white transition hover:text-gray-500/75">Home</p>
-                    </Link> -->
-                </li>
-                <li>
-                     <a class="text-white transition hover:text-gray-500/75" href="#noticias"> Notícias </a> 
-                    <!-- <Link href="/login">
-                        <p class="text-white transition hover:text-gray-500/75">Login</p>
-                    </Link> -->
-                </li>
-                <li>
-                     <a class="text-white transition hover:text-gray-500/75" href="#noticias"> Notícias </a> 
-                    <!-- <Link href="/perfil">
-                        <p class="text-white transition hover:text-gray-500/75">Perfil</p>
-                    </Link> -->
-                </li>
-                </ul>
-            </nav>
-
-            <div class="flex items-center gap-4" id="header_link">
-                <div class="sm:flex sm:gap-4">
-                <!--  elemento dinâmico para botão de login/página de usuário  -->
-                <!--  {user}  -->
+            <div class="flex h-16 items-center justify-between">
+                <!-- Logo -->
+                <div class="flex-1 md:flex md:items-center md:gap-12">
+                    <h1 class="text-white">PIXEL CLOUD</h1>
                 </div>
+
+                <!-- Botão dropdown com texto -->
+                <div class="relative inline-block text-left">
+
+                    <!-- Botão com texto + seta -->
+                    <button id="menu-btn" type="button"
+                        class="flex items-center px-4 py-2 text-sm font-medium text-white transition hover:text-gray-500/75 dark:bg-gray-800 focus:outline-none dark:text-white dark:hover:text-gray-400"
+                        aria-haspopup="true" aria-expanded="false">
+                        Menu
+                        <svg class="ml-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown menu -->
+                    <ul id="menu-dropdown"
+                        class="absolute  right-0 mt-1 w-40 rounded border border-gray-300 bg-white shadow-md dark:border-gray-600 dark:bg-gray-800 hidden">
+
+
+                        <li>
+                            <a href="#login"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
+                                role="menuitem">Cadastro</a>
+                        </li>
+                        <li>
+                            <a href="#form"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
+                                role="menuitem">Formulário</a>
+                        </li>
+                        <li>
+                            <a href="#perfil"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
+                                role="menuitem">Perfil</a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
-            </div>
-        </div>
         </div>
     </header>
 
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menuDropdown = document.getElementById('menu-dropdown');
+
+        menuBtn.addEventListener('click', () => {
+            const isHidden = menuDropdown.classList.contains('hidden');
+            if (isHidden) {
+                menuDropdown.classList.remove('hidden');
+                menuBtn.setAttribute('aria-expanded', 'true');
+            } else {
+                menuDropdown.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        menuDropdown.addEventListener('click', () => {
+            menuDropdown.classList.add('hidden');
+        })
+
+        // Opcional: fechar o menu se clicar fora
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !menuDropdown.contains(e.target)) {
+                menuDropdown.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+
+    </script>
+
+
     <!-- MAIN -->
 
-    <main> 
+    <main>
         <section style="display: flex; justify-content: center; margin-top: 2rem; margin-bottom: 2rem;">
-            <div class="flex flex-col md:flex-row gap-8 bg-gray-900 p-8 rounded-2xl shadow-lg w-full max-w-5xl">
-                
+            <div id="login" class="flex flex-col md:flex-row gap-8 bg-gray-900 p-8 rounded-2xl shadow-lg w-full max-w-5xl">
+
                 <!-- Login Form -->
                 <div class="flex-1">
                     <h2 class="text-2xl font-bold text-white mb-6">Login</h2>
                     <form class="space-y-4">
                         <div>
                             <label class="block text-gray-300">Email</label>
-                            <input type="email" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="seu@email.com">
+                            <input type="email" required
+                                class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                placeholder="seu@email.com">
                         </div>
                         <div>
                             <label class="block text-gray-300">Senha</label>
-                            <input type="password" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="********">
+                            <input type="password" required
+                                class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                placeholder="********">
                         </div>
                         <button class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">
                             Entrar
@@ -85,19 +128,27 @@
                     <form class="space-y-4">
                         <div>
                             <label class="block text-gray-300">Nome</label>
-                            <input type="text" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Seu nome">
+                            <input type="text" required
+                                class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                placeholder="Seu nome">
                         </div>
                         <div>
                             <label class="block text-gray-300">Email</label>
-                            <input type="email" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="seu@email.com">
+                            <input type="email" required
+                                class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                placeholder="seu@email.com">
                         </div>
                         <div>
                             <label class="block text-gray-300">Senha</label>
-                            <input type="password" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="********">
+                            <input type="password" required
+                                class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                placeholder="********">
                         </div>
                         <div>
                             <label class="block text-gray-300">Confirmar Senha</label>
-                            <input type="password" required class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="********">
+                            <input type="password" required
+                                class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                placeholder="********">
                         </div>
                         <button class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition">
                             Cadastrar
@@ -106,20 +157,18 @@
                 </div>
 
             </div>
-        
+
         </section>
 
-        <div class="bg-gray-900 p-8 rounded-2xl shadow-lg w-full max-w-3xl space-y-6 text-center" style="margin: 0 auto; margin-bottom: 2rem;"> <!-- margin 0 auto e bottom 2rem pra fazer a centralização e distanciação -->
+        <div id ="form" class="bg-gray-900 p-8 rounded-2xl shadow-lg w-full max-w-3xl space-y-6 text-center"
+            style="margin: 0 auto; margin-bottom: 2rem;">
+            <!-- margin 0 auto e bottom 2rem pra fazer a centralização e distanciação -->
             <!-- Nome do Jogo -->
             <label for="gameName">
                 <span class="text-sm font-medium text-gray-300"> Nome do Jogo </span>
 
-                <input
-                type="text"
-                id="gameName"
-                placeholder="Ex: The Witcher 3"
-                class="mt-0.5 w-full rounded border border-gray-500 shadow-sm sm:text-sm bg-gray-900 text-white focus:ring-indigo-500 focus:border-indigo-500"
-                />
+                <input type="text" id="gameName" placeholder="Ex: The Witcher 3"
+                    class="mt-0.5 w-full rounded border border-gray-500 shadow-sm sm:text-sm bg-gray-900 text-white focus:ring-indigo-500 focus:border-indigo-500" />
             </label>
 
             <br> <br>
@@ -128,42 +177,31 @@
             <fieldset>
                 <legend class="text-sm font-medium text-gray-300 mb-2"> Disponível para </legend>
 
-                <div class="flex flex-col sm:flex-row sm:gap-6 gap-3" style="justify-content: space-around;"> <!-- Justify content:center pra centralizar os elementos do jeito certo-->
-                <label for="xbox" class="inline-flex items-center gap-3">
-                    <input
-                    type="checkbox"
-                    id="xbox"
-                    class="size-5 rounded border border-gray-500 shadow-sm bg-gray-900 ring-offset-gray-900 checked:bg-blue-600"
-                    />
-                    <span class="font-medium text-gray-300"> Xbox </span>
-                </label>
+                <div class="flex flex-col sm:flex-row sm:gap-6 gap-3" style="justify-content: space-around;">
+                    <!-- Justify content:center pra centralizar os elementos do jeito certo-->
+                    <label for="xbox" class="inline-flex items-center gap-3">
+                        <input type="checkbox" id="xbox"
+                            class="size-5 rounded border border-gray-500 shadow-sm bg-gray-900 ring-offset-gray-900 checked:bg-blue-600" />
+                        <span class="font-medium text-gray-300"> Xbox </span>
+                    </label>
 
-                <label for="playstation" class="inline-flex items-center gap-3">
-                    <input
-                    type="checkbox"
-                    id="playstation"
-                    class="size-5 rounded border border-gray-500 shadow-sm bg-gray-900 ring-offset-gray-900 checked:bg-blue-600"
-                    />
-                    <span class="font-medium text-gray-300"> Playstation </span>
-                </label>
+                    <label for="playstation" class="inline-flex items-center gap-3">
+                        <input type="checkbox" id="playstation"
+                            class="size-5 rounded border border-gray-500 shadow-sm bg-gray-900 ring-offset-gray-900 checked:bg-blue-600" />
+                        <span class="font-medium text-gray-300"> Playstation </span>
+                    </label>
 
-                <label for="pc" class="inline-flex items-center gap-3">
-                    <input
-                    type="checkbox"
-                    id="pc"
-                    class="size-5 rounded border border-gray-500 shadow-sm bg-gray-900 ring-offset-gray-900 checked:bg-blue-600"
-                    />
-                    <span class="font-medium text-gray-300"> PC </span>
-                </label>
+                    <label for="pc" class="inline-flex items-center gap-3">
+                        <input type="checkbox" id="pc"
+                            class="size-5 rounded border border-gray-500 shadow-sm bg-gray-900 ring-offset-gray-900 checked:bg-blue-600" />
+                        <span class="font-medium text-gray-300"> PC </span>
+                    </label>
 
-                <label for="Android" class="inline-flex items-center gap-3">
-                    <input
-                    type="checkbox"
-                    id="pc"
-                    class="size-5 rounded border border-gray-500 shadow-sm bg-gray-900 ring-offset-gray-900 checked:bg-blue-600"
-                    />
-                    <span class="font-medium text-gray-300"> Android </span>
-                </label>
+                    <label for="Android" class="inline-flex items-center gap-3">
+                        <input type="checkbox" id="pc"
+                            class="size-5 rounded border border-gray-500 shadow-sm bg-gray-900 ring-offset-gray-900 checked:bg-blue-600" />
+                        <span class="font-medium text-gray-300"> Android </span>
+                    </label>
 
                 </div>
             </fieldset>
@@ -172,14 +210,8 @@
             <label for="stars">
                 <span class="text-sm font-medium text-gray-300"> Quantidade de Estrelas </span>
 
-                <input
-                type="number"
-                id="stars"
-                min="1"
-                max="5"
-                placeholder="De 1 a 5"
-                class="mt-0.5 w-full rounded border border-gray-500 shadow-sm sm:text-sm bg-gray-900 text-white focus:ring-indigo-500 focus:border-indigo-500"
-                />
+                <input type="number" id="stars" min="1" max="5" placeholder="De 1 a 5"
+                    class="mt-0.5 w-full rounded border border-gray-500 shadow-sm sm:text-sm bg-gray-900 text-white focus:ring-indigo-500 focus:border-indigo-500" />
             </label>
 
             <br> <br>
@@ -188,12 +220,8 @@
             <label for="gameImage">
                 <span class="text-sm font-medium text-gray-300"> Imagem do Jogo (URL ou arquivo) </span>
 
-                <input
-                type="file"
-                id="gameImage"
-                accept="image/*"
-                class="mt-0.5 w-full rounded border border-gray-500 shadow-sm file:bg-indigo-600 file:text-white file:rounded file:px-4 file:py-1 file:border-0 file:mr-4 sm:text-sm bg-gray-900 text-white focus:ring-indigo-500 focus:border-indigo-500"
-                />
+                <input type="file" id="gameImage" accept="image/*"
+                    class="mt-0.5 w-full rounded border border-gray-500 shadow-sm file:bg-indigo-600 file:text-white file:rounded file:px-4 file:py-1 file:border-0 file:mr-4 sm:text-sm bg-gray-900 text-white focus:ring-indigo-500 focus:border-indigo-500" />
             </label>
 
             <br> <br>
@@ -202,33 +230,24 @@
             <label for="review">
                 <span class="text-sm font-medium text-gray-300"> Sua Review </span>
 
-                <textarea
-                id="review"
-                rows="8"
-                placeholder="Escreva aqui sua review do jogo"
-                class="mt-0.5 w-full resize-none rounded border border-gray-500 shadow-sm sm:text-sm bg-gray-900 text-white focus:ring-indigo-500 focus:border-indigo-500"
-                ></textarea>
+                <textarea id="review" rows="8" placeholder="Escreva aqui sua review do jogo"
+                    class="mt-0.5 w-full resize-none rounded border border-gray-500 shadow-sm sm:text-sm bg-gray-900 text-white focus:ring-indigo-500 focus:border-indigo-500"></textarea>
             </label>
 
             <!-- Toggle de Aceitação dos Termos -->
             <div class="flex items-center gap-3">
-                <label
-                for="accept"
-                class="relative block h-8 w-14 rounded-full bg-gray-500 transition-colors [-webkit-tap-highlight-color:_transparent] has-checked:bg-green-500"
-                >
-                <input type="checkbox" id="accept" class="peer sr-only" />
-                <span
-                    class="absolute inset-y-0 start-0 m-1 size-6 rounded-full bg-white transition-[inset-inline-start] peer-checked:start-6 dark:bg-gray-900"
-                ></span>
+                <label for="accept"
+                    class="relative block h-8 w-14 rounded-full bg-gray-500 transition-colors [-webkit-tap-highlight-color:_transparent] has-checked:bg-green-500">
+                    <input type="checkbox" id="accept" class="peer sr-only" />
+                    <span
+                        class="absolute inset-y-0 start-0 m-1 size-6 rounded-full bg-white transition-[inset-inline-start] peer-checked:start-6 dark:bg-gray-900"></span>
                 </label>
                 <span class="text-sm text-gray-300">Aceito os termos de uso da plataforma</span>
             </div>
 
             <!-- Botão de Enviar -->
-            <button
-                class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition"
-                type="submit"
-            >
+            <button class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition"
+                type="submit">
                 Enviar Review
             </button>
         </div>
@@ -237,18 +256,19 @@
 
     <footer class="bg-black">
         <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <div class="flex justify-center text-teal-600">
-            <h1 class="text-white">PIXEL CLOUD</h1>
-        </div>
+            <div class="flex justify-center text-teal-600">
+                <h1 class="text-white">PIXEL CLOUD</h1>
+            </div>
 
-        <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
-            Este site cataloga e publica opiniões próprias a respeito de videogames.
-        </p>
+            <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
+                Este site cataloga e publica opiniões próprias a respeito de videogames.
+            </p>
 
-        <ul class="mt-12 flex justify-center gap-6 md:gap-8">
-            <!--  Ícones de redes sociais  -->
-        </ul>
+            <ul class="mt-12 flex justify-center gap-6 md:gap-8">
+                <!--  Ícones de redes sociais  -->
+            </ul>
         </div>
     </footer>
 </body>
+
 </html>
