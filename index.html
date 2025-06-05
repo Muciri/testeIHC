@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pixel Games</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body style="background-color: #2D2D2D;">
@@ -48,9 +52,9 @@
                                 role="menuitem">Formulário</a>
                         </li>
                         <li>
-                            <a href="#perfil"
+                            <a href="#jogos"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
-                                role="menuitem">Perfil</a>
+                                role="menuitem">jogos</a>
                         </li>
                     </ul>
                 </div>
@@ -93,8 +97,11 @@
     </script>
   <!-- MAIN -->
   <main>
+    <h1 class ="text-center text-white" style="font-size: 2rem; font-family: Impact;">Formulário de Login/Cadastro</h1>
+    <hr class ="text-white" style="margin: 0 auto;  width: 50vw;"> <br>
+
     <!-- LOGIN / CADASTRO -->
-    <section class="flex justify-center my-8">
+    <section id = "login" class="flex justify-center my-8">
       <div class="flex flex-col md:flex-row gap-8 bg-gray-900 p-8 rounded-2xl shadow-lg w-full max-w-5xl">
         <!-- Login Form -->
         <div class="flex-1">
@@ -144,8 +151,11 @@
       </div>
     </section>
 
-    <!-- REVIEW FORM -->
-    <div class="bg-gray-900 p-8 rounded-2xl shadow-lg w-full max-w-3xl space-y-6 text-center mx-auto mb-8">
+    <!-- REVIEW FORM --> 
+    <h1 class ="text-center text-white" style="font-size: 2rem; font-family: Impact;">Formulário de Review</h1>
+    <hr class ="text-white" style="margin: 0 auto;  width: 50vw;"> <br> 
+
+    <div id = "form" class="bg-gray-900 p-8 rounded-2xl shadow-lg w-full max-w-3xl space-y-6 text-center mx-auto mb-8">
       <label for="gameName">
         <span class="text-sm font-medium text-gray-300"> Nome do Jogo </span>
         <input type="text" id="gameName" placeholder="Ex: The Witcher 3" class="mt-0.5 w-full rounded border border-gray-500 shadow-sm sm:text-sm bg-gray-900 text-white focus:ring-indigo-500 focus:border-indigo-500"/>
@@ -211,6 +221,83 @@
     </div>
   </main>
 
+  <!-- reviews de jogos -->
+    <h1 id = "jogos" class ="text-center text-white" style="font-size: 2rem; font-family: Impact;">Reviews recentes</h1>
+    <hr class ="text-white" style="margin: 0 auto;  width: 50vw;"> <br>
+
+    <article class="container mx-auto mt-10">
+
+      <div class="flex flex-wrap justify-center gap-8">
+        <!-- Card Red Dead Redemption II -->
+        <div class="card bg-black shadow-xl w-80">
+          <figure>
+            <img 
+              src="https://raw.githubusercontent.com/Felipejjjj/pixel-view/refs/heads/main/assets/images/RD2.png" 
+              alt="Red Dead Redemption II"
+              class="h-90 w-full object-cover"
+            >
+          </figure>
+          <div class="card-body">
+            <h2 class="text-white card-title text-lg">Red Dead Redemption II</h2>
+            <p class="text-white text-sm">Um épico do velho oeste com narrativa imersiva e gráficos incríveis.</p>
+            <div class="card-actions justify-end">
+              <button 
+                class="block w-full rounded bg-purple-600 p-3 text-sm font-medium transition hover:scale-105"
+                onclick="window.location.href='https://felipejjjj.github.io/pixel-view/assets/views/review-red.html'">
+                Leia a Review
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Elden Ring -->
+        <div class="card bg-black shadow-xl w-80">
+          <figure>
+            <img 
+              src="https://raw.githubusercontent.com/Felipejjjj/pixel-view/refs/heads/main/assets/images/EldenRing.png" 
+              alt="Elden Ring"
+              class="h-90 w-full object-cover"
+            >
+          </figure>
+          <div class="card-body">
+            <h2 class="text-white card-title text-lg">Elden Ring</h2>
+            <p class="text-white text-sm">Explore um mundo aberto desafiador e ricamente detalhado.</p>
+            <div class="card-actions justify-end">
+              <button 
+                class="block w-full rounded bg-purple-600 p-3 text-sm font-medium transition hover:scale-105"
+                onclick="window.location.href='https://felipejjjj.github.io/pixel-view/assets/views/review-elden.html'">
+                Leia a Review
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Hollow Knight -->
+        <div class="card bg-black shadow-xl w-80">
+          <figure>
+            <img 
+              src="https://raw.githubusercontent.com/Felipejjjj/pixel-view/refs/heads/main/assets/images/HollowKnight.png" 
+              alt="Hollow Knight"
+              class="h-90 w-full object-cover"
+            >
+          </figure>
+          <div class="card-body">
+            <h2 class="text-white card-title text-lg">Hollow Knight</h2>
+            <p class="text-white text-sm">Uma aventura metroidvania cativante com bela arte 2D.</p>
+            <div class="card-actions justify-end">
+              <button 
+                class="block w-full rounded bg-purple-600 p-3 text-sm font-medium transition hover:scale-105"
+                onclick="window.location.href='https://felipejjjj.github.io/pixel-view/assets/views/review-hollow.html'">
+                Leia a Review
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <br> <br>
+
   <!-- FOOTER -->
   <footer class="bg-black">
     <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
@@ -221,6 +308,14 @@
         Este site cataloga e publica opiniões próprias a respeito de videogames.
       </p>
       <ul class="mt-12 flex justify-center gap-6 md:gap-8"></ul>
+
+      <ul className="mt-12 flex justify-center gap-6 md:gap-8" style="display: flex; justify-content: space-evenly;">
+          <a href="#" style="color: white;"><i class="fa-brands fa-facebook-f fa-2x"></i></a>
+          <a href="#" style="color: white;"><i class="fa-brands fa-x-twitter fa-2x"></i></a>
+          <a href="#" style="color: white;"><i class="fa-brands fa-instagram fa-2x"></i></a>
+          <a href="#" style="color: white;"><i class="fa-brands fa-threads fa-2x"></i></a>
+          <a href="#" style="color: white;"><i class="fa-brands fa-youtube fa-2x"></i></a>
+      </ul>
     </div>
   </footer>
 
